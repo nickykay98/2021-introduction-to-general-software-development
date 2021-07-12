@@ -5,9 +5,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Counter />
-      <Counter />
-      <Counter />
+      <Counter counterTitle={"Number of MSA students"}/>
+      <Counter counterTitle={"People running the application"}/>
+      <Counter counterTitle={"People keeping up"}/>
+      <Counter/>
     </div>
   );
 }

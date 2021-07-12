@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import "./Counter.css"
 
-const Counter: React.FC = () => {
+interface CounterProps {
+    counterTitle?: string;
+}
+
+const Counter: React.FC<CounterProps> = ({counterTitle}) => {
     const [count, setCount] = useState(5);
 
     const decrement = () => {
@@ -20,7 +24,7 @@ const Counter: React.FC = () => {
                 {"<"}
             </button>
             <div className="counter-label">
-                {`Counter Value:  ${count}`}
+                {`${counterTitle}:  ${count}`}
             </div>
             <button className="counter-btn" onClick={increment}>
                 {">"}
