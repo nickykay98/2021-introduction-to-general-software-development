@@ -1,8 +1,22 @@
 console.log("Hello World");
 
+let myVar = "Heyy"
+console.log(myVar)
+
+myVar = 10
+console.log(myVar)
+
+myVar = true
+console.log(myVar)
+
+let myEmpty
+console.log(myEmpty)
+
 function myFunction() {
   console.log("myFunction");
 }
+
+console.log(myFunction)
 
 myFunction();   // Call my function multiple times
 myFunction();
@@ -13,23 +27,33 @@ console.log(notLoaded);
 window.onload = () => {
   const btn = document.getElementById("btn");
   btn.innerHTML = "Red";
-  btn.style = "color: red";
+  // btn.style = "color: red";
   console.log(btn);
 
   let blue = false;
 
   // Lets call a function when we press the button
+  // const handleClick = () => {
+  //   console.log("I clicked my btn");
+  //   if (blue) {
+  //     btn.innerHTML = "Red";
+  //     btn.style = "color: red";
+  //     blue = false;
+  //   } else {
+  //     btn.innerHTML = "Blue";
+  //     btn.style = "color: blue";
+  //     blue = true;
+  //   }
+  // };
+
   const handleClick = () => {
     console.log("I clicked my btn");
     if (blue) {
-      btn.innerHTML = "Red";
-      btn.style = "color: red";
-      blue = false;
+      btn.classList.add("btn-red")
     } else {
-      btn.innerHTML = "Blue";
-      btn.style = "color: blue";
-      blue = true;
+      btn.classList.remove("btn-red")
     }
+    blue=!blue
   };
 
   btn.onclick = handleClick;

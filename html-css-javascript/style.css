@@ -59,3 +59,11 @@ table, td {
 .new-background {
   background-color: lightgreen !important;
 }
+
+.btn-red {
+  color: red !important;
+}
+
+.btn-blue {
+  color: blue;
+}
