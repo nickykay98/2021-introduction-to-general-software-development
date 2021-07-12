@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import "./Counter.css"
 
 interface CounterProps {
@@ -7,6 +8,11 @@ interface CounterProps {
 
 const Counter: React.FC<CounterProps> = ({counterTitle}) => {
     const [count, setCount] = useState(5);
+    const [title, setCounterTitle] = useState("");
+
+    useEffect(() => {
+        setCounterTitle(!!counterTitle ? counterTitle : "Some default counter")
+    }, []);
 
     const decrement = () => {
         setCount(count - 1);
@@ -24,7 +30,7 @@ const Counter: React.FC<CounterProps> = ({counterTitle}) => {
                 {"<"}
             </button>
             <div className="counter-label">
-                {`${counterTitle}:  ${count}`}
+                {`${title}:  ${count}`}
             </div>
             <button className="counter-btn" onClick={increment}>
                 {">"}
