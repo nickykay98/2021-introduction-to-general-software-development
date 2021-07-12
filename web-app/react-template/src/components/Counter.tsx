@@ -30,11 +30,14 @@ const Counter: React.FC<CounterProps> = ({counterTitle}) => {
                 {"<"}
             </button>
             <div className="counter-label">
-                {`${title}:  ${count}`}
+                {`${count < 0 ? "????" : title}:  ${count}`}
             </div>
             <button className="counter-btn" onClick={increment}>
                 {">"}
             </button>
+        </div>
+        <div>
+            {count < 0 ? <img src="/DO-NOT-OPEN.png"/> : null}
         </div>
     </div>
 }
